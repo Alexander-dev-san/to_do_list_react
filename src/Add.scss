@@ -1,0 +1,46 @@
+.checkFalse {
+  color: darkgray;
+  text-decoration: line-through;
+}
+
+.checkbox {
+  cursor: pointer;
+}
+
+.Add {
+  text-align: left;
+  margin-top: 20px;
+  span {
+    margin-left: 20px;
+  }
+  &-block {
+    display: flex;
+    border: 1px solid darkgray;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    &_button {
+      margin-left: 20px;
+      button {
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        &#edit {
+          background: url(../src/img/edit.svg) center center/cover no-repeat;
+        }
+        &#delete {
+          background: url(../src/img/delete.svg) center center/cover no-repeat;
+        }
+        &#save {
+          background: url(../src/img/done.svg) center center/cover no-repeat;
+        }
+        &#close {
+          background: url(../src/img/close.svg) center center/cover no-repeat;
+        }
+      }
+    }
+  }
+}
