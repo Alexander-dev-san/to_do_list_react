@@ -1,21 +1,39 @@
 .App {
-  width: 950px;
+  width: 800px;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Dancing Script', cursive;
   button#add_btn {
     padding: 5px 10px;
-    font-size: 20px;
+    width: 150px;
+    font-size: 18px;
     border-radius: 100px;
     outline: none;
     border: none;
-    background: palegreen;
     margin-left: 10px;
     cursor: pointer;
   }
-  input#add_inp {
+  .add_inp {
     font-size: 20px;
     padding: 5px 5px 5px 10px;
     border-radius: 50px;
     outline: none;
   }
+  &_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#standard-basic {
+  width: 850px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: white;
 }

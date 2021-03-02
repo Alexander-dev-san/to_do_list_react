@@ -3,6 +3,7 @@ import "./App.scss";
 import axios from "axios";
 import Add from "./Add";
 import Save from "./Save";
+import { Button, TextField } from "@material-ui/core";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -53,16 +54,39 @@ function App() {
     <div className="App">
       <header>
         <h1>To-Do List</h1>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          maxLength="60"
-          id="add_inp"
-        />
-        <button onClick={() => addNewTask()} id="add_btn">
-          Add new
-        </button>
+        <form className="App_form" noValidate autoComplete="off">
+          <TextField
+            id="standard-basic"
+            label="Введите вашу задачу"
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            maxLength="60"
+            autoFocus
+            onKeyDown={(e) => {
+              if (e.key == "Enter" && text != "") {
+                addNewTask();
+              } else if (text === "" && e.key == "Enter") {
+                alert("Ну как так то!");
+              } else {
+              }
+            }}
+          />
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              if (text != "") {
+                addNewTask();
+              } else {
+                alert("Ну как так то!");
+              }
+            }}
+            id="add_btn"
+          >
+            Add new
+          </Button>
+        </form>
       </header>
       <div className="Add">
         {tasks.map((task, index) =>
@@ -81,6 +105,7 @@ function App() {
               key={`task-${index}`}
               editEl={setEdit}
               saveElem={saveElement}
+              deleteEl={deleteElement}
               index={index}
               setText={setText}
               saveElement={saveElement}

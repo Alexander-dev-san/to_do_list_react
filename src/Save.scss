@@ -10,9 +10,10 @@
     display: flex;
     align-items: center;
     border: 1px solid darkgray;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding: 10px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,255,0.5);
     &_button {
       margin-left: 20px;
       button {
@@ -31,11 +32,15 @@
       }
     }
     input#save_inp {
+      width: 600px;
       padding: 5px;
       font-size: 15px;
       margin-left: 20px;
       border-radius: 10px;
       outline: none;
+      font-family: 'Dancing Script', cursive;
+      font-size: 20px;
+      word-wrap: break-word;
     }
   }
 }

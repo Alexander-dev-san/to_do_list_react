@@ -19,7 +19,12 @@ function Save(props) {
       <input
         type="text"
         value={textInput}
-        id='save_inp'
+        id="save_inp"
+        autoFocus
+        onKeyDown={(e) => {
+          if (e.key === "Backspace" && textInput == "" && e.repeat == false)
+            props.deleteEl(props.index);
+        }}
         onChange={(e) => setTextInput(e.target.value)}
       />
 

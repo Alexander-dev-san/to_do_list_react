@@ -22,7 +22,16 @@ function Add(props) {
         <span>{props.task.text}</span>
       )}
       <div className="Add-block_button">
-        <button onClick={() => props.editEl(props.index)} id="edit"></button>
+        <button
+          onClick={() => {
+            if (!check) {
+              props.editEl(props.index);
+            } else {
+              alert("Вы не можете изменить выполненную задачу");
+            }
+          }}
+          id="edit"
+        ></button>
         <button
           onClick={() => props.deleteEl(props.index)}
           id="delete"
