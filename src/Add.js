@@ -1,8 +1,33 @@
 import React, { useState } from "react";
 import "./Add.scss";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
+import { makeStyles } from "@material-ui/core/styles";
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    "& > * + *": {
+      marginTop: theme.spacing(2),
+    },
+  },
+}));
 
 function Add(props) {
   const [check, setCheck] = useState(props.task.isCheck);
+  const [open, setOpen] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   return (
     <div className="Add-block">
@@ -16,16 +41,11 @@ function Add(props) {
             setCheck(!check)
           }
         />
-
-        {check ? (
-          <p className="checkFalse">{props.task.text}</p>
-        ) : (
-          <p>{props.task.text}</p>
-        )}
+        <p className={check ? "checkFalse" : ""}>{props.task.text}</p>
       </div>
       <div className="Add-block_button">
         <button
-          onClick={() => (!check) ? props.editEl(props.index) : alert("Вы не можете изменить выполненную задачу")}
+          onClick={() => (!check ? props.editEl(props.index) : setOpen(true))}
           id="edit"
         ></button>
         <button
@@ -33,6 +53,11 @@ function Add(props) {
           id="delete"
         ></button>
       </div>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error">
+          Вы не можете исправить выполненное действие!
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
