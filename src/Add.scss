@@ -5,28 +5,36 @@
 
 .checkbox {
   cursor: pointer;
+  width: 18px;
+  height: 18px;
 }
 
 .Add {
   text-align: left;
   margin-top: 20px;
-  span {
-    font-size: 20px;
+  p {
+    font-size: 22px;
     margin-left: 20px;
+    word-wrap: break-word;
+    width: 95%;
   }
   &-block {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid darkgray;
     margin-bottom: 30px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
     &_button {
+      display: flex;
       margin-left: 20px;
       button {
         margin-left: 10px;
-        width: 20px;
-        height: 20px;
+        width: 28px;
+        height: 28px;
         outline: none;
         border: none;
         cursor: pointer;
@@ -41,6 +49,29 @@
         }
         &#close {
           background: url(../src/img/close.svg) center center/cover no-repeat;
+        }
+      }
+    }
+  }
+}
+
+.Abb-block_text {
+  display: flex;
+  align-items: center;
+  width: 85%;
+}
+
+@media (max-width: 950px) {
+  .Add {
+    &-block {
+      margin-bottom: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      &_button {
+        margin-left: 10px;
+        button {
+          margin-left: 8px;
+          width: 30px;
+          height: 30px;
         }
       }
     }

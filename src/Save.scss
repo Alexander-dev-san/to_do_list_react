@@ -8,6 +8,7 @@
   margin-top: 20px;
   &-block {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     border: 1px solid darkgray;
     margin-bottom: 30px;
@@ -15,11 +16,12 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,255,0.5);
     &_button {
+      display: flex;
       margin-left: 20px;
       button {
         margin-left: 10px;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         outline: none;
         border: none;
         cursor: pointer;
@@ -31,16 +33,33 @@
         }
       }
     }
-    input#save_inp {
-      width: 600px;
+    #save_inp {
+      width: 80vw;
       padding: 5px;
       font-size: 15px;
       margin-left: 20px;
       border-radius: 10px;
       outline: none;
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Raleway', sans-serif;
       font-size: 20px;
       word-wrap: break-word;
+    }
+  }
+  .Abb-block_text {
+    display: flex;
+    align-items: center;
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Save {
+    text-align: left;
+    margin-top: 20px;
+    &-block {
+      #save_inp {
+        width: 60vw;
+      }
     }
   }
 }

@@ -6,30 +6,26 @@ function Add(props) {
 
   return (
     <div className="Add-block">
-      <input
-        type="checkbox"
-        className="checkbox"
-        checked={check}
-        onChange={() =>
-          props.saveElement(props.index, props.task.text, !check) &&
-          setCheck(!check)
-        }
-      />
+      <div className="Abb-block_text">
+        <input
+          type="checkbox"
+          className="checkbox"
+          checked={check}
+          onChange={() =>
+            props.saveElement(props.index, props.task.text, !check) &&
+            setCheck(!check)
+          }
+        />
 
-      {check ? (
-        <span className="checkFalse">{props.task.text}</span>
-      ) : (
-        <span>{props.task.text}</span>
-      )}
+        {check ? (
+          <p className="checkFalse">{props.task.text}</p>
+        ) : (
+          <p>{props.task.text}</p>
+        )}
+      </div>
       <div className="Add-block_button">
         <button
-          onClick={() => {
-            if (!check) {
-              props.editEl(props.index);
-            } else {
-              alert("Вы не можете изменить выполненную задачу");
-            }
-          }}
+          onClick={() => (!check) ? props.editEl(props.index) : alert("Вы не можете изменить выполненную задачу")}
           id="edit"
         ></button>
         <button
