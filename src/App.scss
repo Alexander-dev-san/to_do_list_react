@@ -1,21 +1,78 @@
 .App {
-  width: 950px;
+  width: 70vw;
   margin: 0 auto;
   text-align: center;
-  button#add_btn {
+  font-family: 'Raleway', sans-serif;
+  #add_btn {
     padding: 5px 10px;
-    font-size: 20px;
+    width: 15vw;
+    font-size: 18px;
     border-radius: 100px;
     outline: none;
     border: none;
-    background: palegreen;
     margin-left: 10px;
     cursor: pointer;
   }
-  input#add_inp {
+  .add_inp {
     font-size: 20px;
     padding: 5px 5px 5px 10px;
     border-radius: 50px;
     outline: none;
   }
+  &_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#standard-basic {
+  width: 80vw;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+@media (max-width: 950px) {
+  .App {
+    width: 90%;
+    #add_btn {
+      padding: 5px 10px;
+      width: 20vw;
+      font-size: 18px;
+    }
+    &_form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  #standard-basic {
+    width: 75vw;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    width: 90%;
+    #add_btn {
+      padding: 3px 8px;
+      width: 20vw;
+      font-size: 15px;
+    }
+    
+  }
+}
+
+@media (max-width: 576px) {
+ 
 }
